@@ -1,0 +1,28 @@
+class analysedText(object):
+    
+    def __init__ (self, text):
+        self.text=text;
+        lowText=text.lower();
+        one_Text=lowText.replace(".","");
+        two_Text=one_Text.replace("!","");
+        three_Text=two_Text.replace(",","");
+        formatText=three_Text.replace("?","");
+        self.fmtText=formatText
+    
+    
+    def freqAll(self):
+        words=self.fmtText.split()
+        unique={};
+        for word in words:
+            if word not in unique:
+                unique[word]=1;
+            elif word in unique:
+                unique[word]=unique[word]+1
+        self.freqAll=unique;
+        print(unique)
+        return unique
+    
+    def freqOf(self,word):
+        self.word=word;
+        x=self.freqAll[word];
+        return x
